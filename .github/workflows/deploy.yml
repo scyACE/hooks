@@ -17,8 +17,12 @@ jobs:
         with:
           node-version: 16.18.0
 
-      - name: Install pnpm
-        run: npm install -g pnpm@7.32.0 # 安装兼容的 pnpm 版本
+      - name: Install specific pnpm version
+        run: npx pnpm@7.32.0 install # 使用 npx 安装特定版本的 pnpm
+      - name: Install dependencies
+        run: npx pnpm@7.32.0 install # 使用 npx 运行特定版本的 pnpm
+      - name: Build project
+        run: npx pnpm@7.32.0 run build # 使用 npx 运行特定版本的 pnpm
 
       - name: Install and Build
         run: |
