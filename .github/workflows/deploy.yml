@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: 16.18.0
 
+      - name: Install pnpm
+        run: npm install -g pnpm@7.32.0 # 安装兼容的 pnpm 版本
+
       - name: Install and Build
         run: |
           npm i -g pnpm
