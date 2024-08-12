@@ -17,16 +17,9 @@ jobs:
         with:
           node-version: 16.18.0
 
-      - name: Install specific pnpm version
-        run: npx pnpm@7.32.0 install # 使用 npx 安装特定版本的 pnpm
-      - name: Install dependencies
-        run: npx pnpm@7.32.0 install # 使用 npx 运行特定版本的 pnpm
-      - name: Build project
-        run: npx pnpm@7.32.0 run build # 使用 npx 运行特定版本的 pnpm
-
       - name: Install and Build
         run: |
-          npm i -g pnpm
+          npm i -g pnpm@7.32.0
           pnpm run init
           pnpm run build:doc
         env:
